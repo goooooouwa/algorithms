@@ -11,11 +11,12 @@ def run(algorithm, length)
 end
 
 def run_all(length)
+  algorithms = ["quick_sort", "merge_sort", "bubble_sort"]
   array = rand_array(length, length*10)
   # puts "input [#{array.join(",")}]"
   Benchmark.bm do |x|
-   x.report("quicksort:") { quick_sort(Array.new(array), 0, array.length-1) }
-   x.report("merge sort:") { merge_sort(Array.new(array), 0, array.length-1) }
-   x.report("bubble sort:") { bubble_sort(Array.new(array), 0, array.length-1) }
+    algorithms.each do |algorithm|
+      x.report("#{algorithm}:") { send(algorithm, Array.new(array), 0, array.length-1) }
+    end
   end
 end
