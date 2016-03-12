@@ -6,7 +6,7 @@ require "./merge_sort"
 
 def run(algorithm, length)
   array = rand_array(length, length*10)
-  puts "input [#{array.join(",")}]"
+  # puts "input [#{array.join(",")}]"
   puts Benchmark.measure { send(algorithm, array, 0, array.length-1) }
 end
 
