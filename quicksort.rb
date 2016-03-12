@@ -1,4 +1,3 @@
-# array[p..r]
 def quick_sort(array, p, r)
   if p < r
     q = partition(array, p, r)
