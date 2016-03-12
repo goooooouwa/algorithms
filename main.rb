@@ -4,6 +4,12 @@ require "./quicksort"
 require "./bubblesort"
 require "./merge_sort"
 
+def run(algorithm, length)
+  array = rand_array(length, length*10)
+  puts "input [#{array.join(",")}]"
+  send(algorithm, array, 0, array.length-1)
+end
+
 def run_all(length)
   array = rand_array(length, length*10)
   # puts "input [#{array.join(",")}]"
