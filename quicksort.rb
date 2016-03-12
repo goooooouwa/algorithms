@@ -25,10 +25,3 @@ def partition(array, p, r)
   puts "after partition [#{array.join(",")}]"
   return i
 end
-
-def run
-  array = [20,10,13,18,17,15,16,14,1,2,4,7,9,3,8,5,6]
-  puts "[#{array.join(",")}]"
-  quick_sort(array, 0, array.length-1)
-  puts "[#{array.join(",")}]"
-end
