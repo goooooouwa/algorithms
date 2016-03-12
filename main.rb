@@ -1,7 +1,7 @@
 require 'benchmark'
 require "./rand_array"
-require "./quicksort"
-require "./bubblesort"
+require "./quick_sort"
+require "./bubble_sort"
 require "./merge_sort"
 
 def run(algorithm, length)
