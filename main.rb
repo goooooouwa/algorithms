@@ -3,6 +3,7 @@ require "./rand_array"
 require "./quick_sort"
 require "./bubble_sort"
 require "./merge_sort"
+require "./insertion_sort"
 
 def run(algorithm, length)
   array = rand_array(length, length*10)
@@ -11,7 +12,7 @@ def run(algorithm, length)
 end
 
 def run_all(length)
-  algorithms = ["quick_sort", "merge_sort", "bubble_sort"]
+  algorithms = ["quick_sort", "merge_sort", "insertion_sort", "bubble_sort"]
   array = rand_array(length, length*10)
   # puts "input [#{array.join(",")}]"
   Benchmark.bm do |x|
