@@ -8,8 +8,8 @@
 # How to run
 
 ```bash
-# run individual algorithm and specifying input size
-ruby -r './main' -e 'run("quick_sort",100000)'
-# run all algorithms together
+# benchmark individual algorithm
+ruby -r './main' -e 'run("quick_sort")'
+# benchmark all algorithms and specifying input size
 ruby -r './main' -e 'run_all(10000)'
 ```
