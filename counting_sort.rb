@@ -14,6 +14,7 @@ def counting_sort(array, k)
   (array.length-1).downto(0) do |j|
     # puts "result[#{count[array[j]]-1}] <- array[j]=#{array[j]}"
     result[count[array[j]]-1] = array[j]
+    count[array[j]] -= 1
   end
   # puts "output [#{result.join(",")}]"
   return result
