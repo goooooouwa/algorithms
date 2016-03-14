@@ -9,13 +9,15 @@ def run(algorithm)
   sorted_array = [1,2,3,4,5]
   reverse_sorted_array = [5,4,3,2,1]
   same_keys_array = [0,0,0,1,1,1]
-  sizes = [1000, 10000, 100000]
+  ten_keys_random_array = rand_array(10, 10)
+  sizes = [100, 1000, 10000]
   Benchmark.bm do |x|
     x.report("sorted array:") { send(algorithm, sorted_array, 0, sorted_array.length-1) }
     x.report("reverse sorted array:") { send(algorithm, reverse_sorted_array, 0, reverse_sorted_array.length-1) }
     x.report("same keys array:") { send(algorithm, same_keys_array, 0, same_keys_array.length-1) }
+    x.report("10 keys random array [#{ten_keys_random_array.join(',')}]:") { send(algorithm, ten_keys_random_array, 0, ten_keys_random_array.length-1) }
     for i in sizes
-      x.report("#{i} keys array:") { send(algorithm, rand_array(i, i), 0, i-1) }
+      x.report("#{i} keys random array:") { send(algorithm, rand_array(i, i), 0, i-1) }
     end
   end
 end
