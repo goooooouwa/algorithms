@@ -1,3 +1,10 @@
+# Algorithms
+
+- quick_sort
+- bubble_sort
+- merge_sort
+- insertion_sort
+
 # How to run
 
 ```bash
