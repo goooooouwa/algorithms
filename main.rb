@@ -27,7 +27,7 @@ def test_all(algorithm)
   for (type, array) in samples
     puts "#{type}: [#{array.join(",")}]"
     send(algorithm, array, 0, array.length-1)
-    puts "---end---"
+    puts "Press ENTER key to continue..."
     gets
   end
 end
