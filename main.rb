@@ -5,19 +5,38 @@ require "./bubble_sort"
 require "./merge_sort"
 require "./insertion_sort"
 
+def test(algorithm, input_type)
+  samples = {
+    sorted: [1,2,3,4,5],
+    reverse_sorted: [5,4,3,2,1],
+    same_keys: [0,0,0,1,1,1],
+    randomized: rand_array(10, 100)
+  }
+  array = samples[input_type.to_sym]
+  puts "input [#{array.join(",")}]"
+  send(algorithm, array, 0, array.length-1)
+end
+
+def test_all(algorithm)
+  samples = {
+    sorted: [1,2,3,4,5],
+    reverse_sorted: [5,4,3,2,1],
+    same_keys: [0,0,0,1,1,1],
+    randomized: rand_array(10, 100)
+  }
+  for (type, array) in samples
+    puts "#{type}: [#{array.join(",")}]"
+    send(algorithm, array, 0, array.length-1)
+    puts "---end---"
+    gets
+  end
+end
+
 def run(algorithm)
-  sorted_array = [1,2,3,4,5]
-  reverse_sorted_array = [5,4,3,2,1]
-  same_keys_array = [0,0,0,1,1,1]
-  ten_keys_random_array = rand_array(10, 10)
   sizes = [100, 1000, 10000]
   Benchmark.bm do |x|
-    x.report("sorted array:") { send(algorithm, sorted_array, 0, sorted_array.length-1) }
-    x.report("reverse sorted array:") { send(algorithm, reverse_sorted_array, 0, reverse_sorted_array.length-1) }
-    x.report("same keys array:") { send(algorithm, same_keys_array, 0, same_keys_array.length-1) }
-    x.report("10 keys random array [#{ten_keys_random_array.join(',')}]:") { send(algorithm, ten_keys_random_array, 0, ten_keys_random_array.length-1) }
     for i in sizes
-      x.report("#{i} keys random array:") { send(algorithm, rand_array(i, i), 0, i-1) }
+      x.report("#{i} items:") { send(algorithm, rand_array(i, i), 0, i-1) }
     end
   end
 end
