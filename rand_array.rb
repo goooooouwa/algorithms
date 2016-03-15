@@ -1,8 +1,7 @@
 def rand_array(length, range)
   array = []
-  prand = Random.new
   length.times do
-    array.push prand.rand(range)
+    array.push rand(range)
   end
   array
 end
