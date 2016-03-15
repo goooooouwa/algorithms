@@ -24,6 +24,6 @@ def merge(array1, array2)
       k += 1
     end
   end
-  # puts "after merge [#{array3.join(",")}]"
+  # puts "after merge [#{array3.join(',')}]"
   return array3
 end

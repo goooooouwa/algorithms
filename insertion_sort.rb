@@ -6,9 +6,9 @@ def insertion_sort(array, p, r)
         t = array[i]
         array[i] = array[i+1]
         array[i+1] = t
-        # puts "[#{array.join(",")}]"
+        # puts "[#{array.join(',')}]"
       end
     end
   end
-  # puts "output array [#{array.join(",")}]"
+  # puts "output array [#{array.join(',')}]"
 end

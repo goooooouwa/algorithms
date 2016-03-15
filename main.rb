@@ -1,10 +1,10 @@
 require 'benchmark'
-require "./my_logger"
-require "./rand_array"
-require "./quick_sort"
-require "./bubble_sort"
-require "./merge_sort"
-require "./insertion_sort"
+require './my_logger'
+require './rand_array'
+require './quick_sort'
+require './bubble_sort'
+require './merge_sort'
+require './insertion_sort'
 
 def test(algorithm, input_type)
   samples = {
@@ -14,7 +14,7 @@ def test(algorithm, input_type)
     randomized: rand_array(10, 100)
   }
   array = samples[input_type.to_sym]
-  MyLogger.instance.logger.info "input [#{array.join(",")}]"
+  MyLogger.instance.logger.info "input [#{array.join(',')}]"
   send(algorithm, array, 0, array.length-1)
 end
 
@@ -26,9 +26,9 @@ def test_all(algorithm)
     randomized: rand_array(10, 100)
   }
   for (type, array) in samples
-    puts "#{type}: [#{array.join(",")}]"
+    puts "#{type}: [#{array.join(',')}]"
     send(algorithm, array, 0, array.length-1)
-    puts "Press ENTER key to continue..."
+    puts 'Press ENTER key to continue...'
     gets
   end
 end
@@ -43,9 +43,9 @@ def run(algorithm)
 end
 
 def run_all(length)
-  algorithms = ["quick_sort", "merge_sort", "insertion_sort", "bubble_sort"]
+  algorithms = ['quick_sort', 'merge_sort', 'insertion_sort', 'bubble_sort']
   array = rand_array(length, length*10)
-  # puts "input [#{array.join(",")}]"
+  # puts "input [#{array.join(',')}]"
   Benchmark.bm do |x|
     algorithms.each do |algorithm|
       x.report("#{algorithm}:") { send(algorithm, Array.new(array), 0, array.length-1) }

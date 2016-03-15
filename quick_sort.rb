@@ -21,6 +21,6 @@ def partition(array, p, r)
   t = array[i]
   array[i] = array[r]
   array[r] = t
-  # puts "after partition [#{array.join(",")}]"
+  # puts "after partition [#{array.join(',')}]"
   return i
 end

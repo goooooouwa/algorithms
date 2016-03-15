@@ -1,4 +1,4 @@
-require "./my_logger"
+require './my_logger'
 
 def bubble_sort(array, p, r)
   for i in 1..array.length-1
@@ -11,5 +11,5 @@ def bubble_sort(array, p, r)
       end
     end
   end
-  MyLogger.instance.logger.debug "output [#{array.join(",")}]"
+  MyLogger.instance.logger.debug "output [#{array.join(',')}]"
 end
