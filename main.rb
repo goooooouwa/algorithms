@@ -1,4 +1,5 @@
 require 'benchmark'
+require "./my_logger"
 require "./rand_array"
 require "./quick_sort"
 require "./bubble_sort"
@@ -13,7 +14,7 @@ def test(algorithm, input_type)
     randomized: rand_array(10, 100)
   }
   array = samples[input_type.to_sym]
-  puts "input [#{array.join(",")}]"
+  MyLogger.instance.logger.info "input [#{array.join(",")}]"
   send(algorithm, array, 0, array.length-1)
 end
 
