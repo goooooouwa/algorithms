@@ -7,5 +7,6 @@ class MyLogger
 
   def initialize
     @logger = Logger.new STDOUT
+    @logger.level = Logger::WARN
   end
 end
