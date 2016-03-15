@@ -43,7 +43,7 @@ def run(algorithm)
 end
 
 def run_all(length)
-  algorithms = ['quick_sort', 'merge_sort', 'insertion_sort', 'bubble_sort']
+  algorithms = %w(quick_sort, merge_sort, insertion_sort, bubble_sort)
   array = rand_array(length, length*10)
   # puts "input [#{array.join(',')}]"
   Benchmark.bm do |x|
