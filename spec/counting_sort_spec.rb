@@ -1,4 +1,4 @@
-require './counting_sort'
+require 'counting_sort'
 
 describe '#counting_sort' do
   context 'with sorted array' do
