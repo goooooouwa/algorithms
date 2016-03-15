@@ -1,3 +1,5 @@
+require './my_logger'
+
 def merge_sort(array, p, r)
   if p < r
     array1 = merge_sort(array, p, (r+p)/2)
@@ -24,6 +26,6 @@ def merge(array1, array2)
       k += 1
     end
   end
-  # puts "after merge [#{array3.join(',')}]"
+  MyLogger.instance.logger.debug "after merge [#{array3.join(',')}]"
   return array3
 end
