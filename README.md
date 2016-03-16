@@ -5,11 +5,8 @@
 - merge_sort
 - insertion_sort
 
-# How to run
+# Installation
+`bundle install`
 
-```bash
-# benchmark individual algorithm
-ruby -r './main' -e 'run("quick_sort")'
-# benchmark all algorithms and specifying input size
-ruby -r './main' -e 'run_all(10000)'
-```
+# Test
+`bundle exec rspec`
