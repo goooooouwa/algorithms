@@ -4,6 +4,7 @@
 - bubble_sort
 - merge_sort
 - insertion_sort
+- counting_sort
 
 # Installation
 `bundle install`
