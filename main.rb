@@ -1,6 +1,6 @@
 require 'benchmark'
 require './my_logger'
-require './rand_array'
+require './lib/rand_array'
 require './quick_sort'
 require './bubble_sort'
 require './merge_sort'

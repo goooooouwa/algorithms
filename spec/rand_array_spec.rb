@@ -1,4 +1,4 @@
-require './rand_array'
+require 'rand_array'
 
 describe '#rand_array' do
   let(:length) { 10 }
