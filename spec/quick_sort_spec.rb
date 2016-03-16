@@ -1,4 +1,4 @@
-require './quick_sort'
+require 'quick_sort'
 
 describe '#quick_sort' do
   context 'with sorted array' do
