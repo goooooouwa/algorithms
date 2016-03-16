@@ -1,4 +1,4 @@
-require './insertion_sort'
+require 'insertion_sort'
 
 describe '#insertion_sort' do
   context 'with sorted array' do
