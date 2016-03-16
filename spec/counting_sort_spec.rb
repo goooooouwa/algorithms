@@ -26,7 +26,7 @@ describe '#counting_sort' do
   end
   it 'should sort 100000 items within 100ms' do
     size = 100000
-    result = Benchmark.measure { counting_sort(rand_array(size, size), size) }
+    result = Benchmark.measure { counting_sort(rand_array(size), size) }
     expect(result.real).to be < 0.1
   end
 end

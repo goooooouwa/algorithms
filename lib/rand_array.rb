@@ -1,7 +1,7 @@
-def rand_array(length, range)
+def rand_array(size)
   array = []
-  length.times do
-    array.push rand(range)
+  size.times do
+    array.push rand(size)
   end
   array
 end

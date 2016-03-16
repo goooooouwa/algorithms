@@ -26,7 +26,7 @@ describe '#merge_sort' do
   end
   it 'should sort 10000 items within 100ms' do
     size = 10000
-    result = Benchmark.measure { merge_sort(rand_array(size, size), 0, size-1) }
+    result = Benchmark.measure { merge_sort(rand_array(size), 0, size-1) }
     expect(result.real).to be < 0.1
   end
 end
