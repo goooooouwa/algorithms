@@ -1,4 +1,4 @@
-require './my_logger'
+require './lib/my_logger'
 
 def merge_sort(array, p, r)
   if p < r

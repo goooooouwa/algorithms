@@ -1,4 +1,4 @@
-require './my_logger'
+require './lib/my_logger'
 
 def counting_sort(array, k)
   count = Array.new(k+1, 0)

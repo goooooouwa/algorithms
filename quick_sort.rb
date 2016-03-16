@@ -1,4 +1,4 @@
-require './my_logger'
+require './lib/my_logger'
 
 def quick_sort(array, p, r)
   if p < r

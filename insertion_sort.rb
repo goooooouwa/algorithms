@@ -1,4 +1,4 @@
-require './my_logger'
+require './lib/my_logger'
 
 def insertion_sort(array, p, r)
   for j in p+1..r

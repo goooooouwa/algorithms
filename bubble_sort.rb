@@ -1,4 +1,4 @@
-require './my_logger'
+require './lib/my_logger'
 
 def bubble_sort(array, p, r)
   for i in 1..array.length-1

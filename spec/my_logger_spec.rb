@@ -1,4 +1,4 @@
-require './my_logger'
+require 'my_logger'
 
 describe MyLogger do
   it 'should only has one instance being created' do
