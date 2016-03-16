@@ -1,4 +1,4 @@
-require './merge_sort'
+require 'merge_sort'
 
 describe '#merge_sort' do
   context 'with sorted array' do
