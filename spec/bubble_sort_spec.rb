@@ -1,4 +1,4 @@
-require './bubble_sort'
+require 'bubble_sort'
 
 describe '#bubble_sort' do
   context 'with sorted array' do
