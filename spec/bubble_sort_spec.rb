@@ -1,3 +1,5 @@
+require 'benchmark'
+require 'rand_array'
 require 'bubble_sort'
 
 describe '#bubble_sort' do
@@ -24,5 +26,10 @@ describe '#bubble_sort' do
       bubble_sort(array,0,array.length-1)
       expect(array).to match_array(array_sorted)
     end
+  end
+  it 'should sort 1000 within 1s' do
+    size = 1000
+    result = Benchmark.measure { bubble_sort(rand_array(size, size), 0, size-1) }
+    expect(result.real).to be < 1
   end
 end

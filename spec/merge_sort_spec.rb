@@ -1,3 +1,5 @@
+require 'benchmark'
+require 'rand_array'
 require 'merge_sort'
 
 describe '#merge_sort' do
@@ -21,5 +23,10 @@ describe '#merge_sort' do
     it 'output sorted array' do
       expect(merge_sort(array,0,array.length-1)).to match_array(array_sorted)
     end
+  end
+  it 'should sort 10000 within 1s' do
+    size = 10000
+    result = Benchmark.measure { merge_sort(rand_array(size, size), 0, size-1) }
+    expect(result.real).to be < 1
   end
 end
