@@ -15,7 +15,7 @@ describe '#rand_array' do
   before :each do
     srand(seed)
   end
-  it 'should generates a random array with given length and range' do
+  it 'should generate a random array with given length and range' do
     expect(rand_array(length, range)).to match_array(generated_array)
   end
 end
