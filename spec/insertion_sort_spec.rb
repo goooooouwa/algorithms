@@ -27,9 +27,11 @@ describe '#insertion_sort' do
       expect(array).to match_array(array_sorted)
     end
   end
-  it 'should sort 1000 items within 100ms' do
-    size = 1000
-    result = Benchmark.measure { insertion_sort(rand_array(size)) }
-    expect(result.real).to be < 0.1
+  context 'when the array contains 1000 random items' do
+    let(:size) { 1000 }
+    it 'should sort it within 100ms' do
+      result = Benchmark.measure { insertion_sort(rand_array(size)) }
+      expect(result.real).to be < 0.1
+    end
   end
 end

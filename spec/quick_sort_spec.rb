@@ -27,9 +27,11 @@ describe '#quick_sort' do
       expect(array).to match_array(array_sorted)
     end
   end
-  it 'should sort 10000 items within 100ms' do
-    size = 10000
-    result = Benchmark.measure { quick_sort(rand_array(size), 0, size-1) }
-    expect(result.real).to be < 0.1
+  context 'when the array contains 10000 random items' do
+    let(:size) { 10000 }
+    it 'should sort it within 100ms' do
+      result = Benchmark.measure { quick_sort(rand_array(size), 0, size-1) }
+      expect(result.real).to be < 0.1
+    end
   end
 end
