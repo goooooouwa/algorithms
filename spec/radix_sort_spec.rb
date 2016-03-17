@@ -1,6 +1,6 @@
 require 'benchmark'
 require 'rand_array'
-require 'counting_sort_by_digit'
+require 'radix_sort'
 
 describe '#radix_sort' do
   context 'when the array is sorted' do
