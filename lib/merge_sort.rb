@@ -2,9 +2,9 @@ def merge_sort(array, p, r)
   if p < r
     array1 = merge_sort(array, p, (r+p)/2)
     array2 = merge_sort(array, (r+p)/2 + 1, r)
-    return merge(array1, array2)
+    merge(array1, array2)
   elsif p == r
-    return [array[p]]
+    [array[p]]
   end
 end
 
@@ -24,5 +24,5 @@ def merge(array1, array2)
       k += 1
     end
   end
-  return array3
+  array3
 end

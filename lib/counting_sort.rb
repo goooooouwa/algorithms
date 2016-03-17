@@ -13,5 +13,5 @@ def counting_sort(array, k)
     result[count[array[j]]-1] = array[j]
     count[array[j]] -= 1
   end
-  return result
+  result
 end

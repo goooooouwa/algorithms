@@ -15,7 +15,7 @@ def counting_sort_by_digit(array, d)
     result[count[get_digit(array[j], d)]-1] = array[j]
     count[t] -= 1
   end
-  return result
+  result
 end
 
 def get_digit(n, d)

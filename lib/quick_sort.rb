@@ -19,5 +19,5 @@ def partition(array, p, r)
   t = array[i]
   array[i] = array[r]
   array[r] = t
-  return i
+  i
 end
