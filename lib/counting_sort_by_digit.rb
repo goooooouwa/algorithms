@@ -1,3 +1,12 @@
+def radix_sort(array, d)
+  for i in 1..d
+    result = counting_sort_by_digit(array,i)
+    result.length.times do |i|
+      array[i-1] = result[i-1]
+    end
+  end
+end
+
 def counting_sort_by_digit(array, d)
   count = Array.new(10, 0)
   result = Array.new(array.length)
