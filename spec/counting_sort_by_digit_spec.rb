@@ -44,3 +44,27 @@ describe '#counting_sort_by_digit' do
     end
   end
 end
+
+describe '#get_digit' do
+  context 'when digit <= 0' do
+    let(:n) { 123 }
+    let(:digit) { 0 }
+    it 'should raise an ArgumentError' do
+      expect{ get_digit(n, digit) }.to raise_error(ArgumentError, 'Digit must be greater than 0')
+    end
+  end
+  context 'when digit = 1' do
+    let(:n) { 123 }
+    let(:digit) { 1 }
+    it 'should return the least significant digit' do
+      expect(get_digit(n,digit)).to eq(3)
+    end
+  end
+  context 'when digit > 1' do
+    let(:n) { 123 }
+    let(:digit) { 3 }
+    it 'should return the third least significant digit' do
+      expect(get_digit(n,digit)).to eq(1)
+    end
+  end
+end

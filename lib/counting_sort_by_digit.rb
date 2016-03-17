@@ -23,7 +23,11 @@ def get_digit(n, d)
   if d == 1
     t = n
   else
-    t = n/(10*(d-1))
+    b = 1
+    (d-1).times do
+      b *= 10
+    end
+    t = n/b
   end
   t % 10
 end
