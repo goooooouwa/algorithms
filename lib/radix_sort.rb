@@ -26,14 +26,10 @@ end
 
 def get_digit(n, d)
   raise ArgumentError, 'Digit must be greater than 0' unless d > 0
-  if d == 1
-    t = n
-  else
-    b = 1
-    (d-1).times do
-      b *= 10
-    end
-    t = n/b
+  b = 1
+  (d-1).times do
+    b *= 10
   end
+  t = n/b
   t % 10
 end
