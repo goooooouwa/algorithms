@@ -35,8 +35,8 @@ describe '#randomized_partition_select' do
       expect(randomized_partition_select(array,0,array.length-1,k)).to eq(n)
     end
   end
-  context 'when the array contains 10000 random items' do
-    let(:size) { 10000 }
+  context 'when the array contains 100000 random items' do
+    let(:size) { 100000 }
     let(:k) { 4 }
     it 'should sort it within 100ms' do
       result = Benchmark.measure { randomized_partition_select(rand_array(size), 0, size-1, k) }
