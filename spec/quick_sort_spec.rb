@@ -37,8 +37,8 @@ describe '#quick_sort' do
 end
 
 describe '#partition' do
-  let(:array) { [1,2,3,4,5] }
-  let(:pivot_position_after_partition) { 4 }
+  let(:array) { [5,4,3,2,1] }
+  let(:pivot_position_after_partition) { 0 }
   it 'pick the last item in array as the pivot, and partition arrays into 2 parts, one contains items smaller than or equal to pivot, the other contains items greater than pivot' do
     expect(partition(array,0,array.length-1)).to eq(pivot_position_after_partition)
   end
@@ -80,12 +80,12 @@ end
 
 describe '#randomized_partition' do
   let(:seed) { 1234 }
-  let(:array) { [1,2,3,4,5] }
+  let(:array) { [5,4,3,2,1] }
   let(:randomly_picked_pivot_position) do
     srand(seed)
     rand(0..array.length-1)
   end
-  let(:pivot_position_after_partition) { randomly_picked_pivot_position }
+  let(:pivot_position_after_partition) { (array.length-1) - randomly_picked_pivot_position }
   before :each do
     srand(seed)
   end
