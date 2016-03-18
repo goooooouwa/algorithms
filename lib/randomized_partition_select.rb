@@ -1,7 +1,7 @@
 require 'quick_sort'
 
 def randomized_partition_select(array, p, r, k)
-  q = partition(array,p,r)
+  q = randomized_partition(array,p,r)
   n = q-p+1
   if n < k
     randomized_partition_select(array,q+1,r,k-n)
