@@ -38,7 +38,7 @@ describe '#radix_sort' do
   context 'when the array contains 10000 random items' do
     let(:size) { 10000 }
     it 'should sort it within 100ms' do
-      result = Benchmark.measure { radix_sort(rand_array(size), 6) }
+      result = Benchmark.measure { radix_sort(rand_array(size), 5) }
       expect(result.real).to be < 0.1
     end
   end
