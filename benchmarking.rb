@@ -20,7 +20,7 @@ def stress
         x.report('%-21s with %-6d %6s items:' %['merge_sort',i,t]) { merge_sort(array,0,array.length-1) }
         x.report('%-21s with %-6d %6s items:' %['quick_sort',i,t]) { quick_sort(array,0,array.length-1) }
         x.report('%-21s with %-6d %6s items:' %['randomized_quick_sort',i,t]) { randomized_quick_sort(array,0,array.length-1) }
-        x.report('%-21s with %-6d %6s items:' %['radix_sort',i,t]) { radix_sort(array,5) }
+        x.report('%-21s with %-6d %6s items:' %['radix_sort',i,t]) { radix_sort(array,Math.log10(i)+1) }
         x.report('%-21s with %-6d %6s items:' %['randomized_select',i,t]) { randomized_select(array,0,array.length-1,5) }
       end
       i *= 10
