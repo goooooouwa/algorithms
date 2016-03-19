@@ -25,8 +25,8 @@ end
 def randomized_quick_sort(array, p, r)
   if p < r
     q = randomized_partition(array, p, r)
-    quick_sort(array, p, q-1)
-    quick_sort(array, q+1, r)
+    randomized_quick_sort(array, p, q-1)
+    randomized_quick_sort(array, q+1, r)
   end
 end
 
