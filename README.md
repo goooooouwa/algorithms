@@ -1,10 +1,15 @@
 # Algorithms
 
+## Sorting
 - quick_sort
 - bubble_sort
 - merge_sort
 - insertion_sort
 - counting_sort
+- radix_sort
+
+## Order Statistic
+- randomized_select
 
 # Installation
 `bundle install`
