@@ -18,3 +18,11 @@ describe '#rand_array' do
     expect(rand_array(size)).to match_array(generated_array)
   end
 end
+
+describe '#sorted_array' do
+  let(:size) { 10 }
+  let(:generated_array) { [0,1,2,3,4,5,6,7,8,9]}
+  it 'should generate a sorted array with given size' do
+    expect(sorted_array(size)).to match_array(generated_array)
+  end
+end
