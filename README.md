@@ -16,3 +16,6 @@
 
 # Test
 `bundle exec rspec`
+
+# Benchmark
+`ruby -Ilib -r './benchmarking' -e 'stress'`
