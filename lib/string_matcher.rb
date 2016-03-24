@@ -1,20 +1,15 @@
-def naive_string_matcher(t,p,s)
+def naive_string_matcher(t, p, s)
   if t.length > p.length
-    i = 0
-    j = 0
-    while i <= t.length-p.length
-      if t[i+j] == p[j]
-        if j == p.length-1
-          s.push i
-          j = 0
-          i += 1
+    for i in 0..t.length-p.length
+      count = 0
+      for j in 0..p.length-1
+        if t[i+j] == p[j]
+          count += 1
         else
-          j += 1
+          break
         end
-      else
-        j = 0
-        i += 1
       end
+      s.push(i) if count == p.length
     end
   end
 end
