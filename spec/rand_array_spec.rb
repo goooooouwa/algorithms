@@ -26,3 +26,19 @@ describe '#sorted_array' do
     expect(sorted_array(size)).to match_array(generated_array)
   end
 end
+
+describe '#rand_string' do
+  let(:size) { 10 }
+  let(:seed) { 1234 }
+  let(:generated_string) do
+    srand(seed)
+    o = [('A'..'Z'),('a'..'z')].map { |i| i.to_a }.flatten
+    (1..size).map { o[rand(o.length)] }.join
+  end
+  before :each do
+    srand(seed)
+  end
+  it 'should generate a random string with given size' do
+    expect(rand_string(size)).to eq(generated_string)
+  end
+end
