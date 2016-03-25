@@ -1,6 +1,6 @@
 def finite_automation_matcher(t, p, s)
   q = 0
-  charset = ('a'..'z')
+  charset = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
   transition = compute_transition_function(p, charset)
   (0..t.length-1).each do |i|
     q = transition[q][t[i]]
