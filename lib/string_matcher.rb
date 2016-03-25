@@ -16,7 +16,8 @@ end
 
 def finite_automation_matcher(t, p, s)
   q = 0
-  transition = compute_transition_function(p)
+  charset = ('a'..'z')
+  transition = compute_transition_function(p,charset)
   (0..t.length-1).each do |i|
     q = transition[q,t[i]]
     if q == p.length-1
@@ -25,11 +26,11 @@ def finite_automation_matcher(t, p, s)
   end
 end
 
-def compute_transition_function(p)
+def compute_transition_function(p,charset)
   transition = []
   (0..p.length-1).each do |i|
     transition.push({})
-    ('a'..'z').each do |j|
+    charset.each do |j|
       if i == p[j]
         transition[i]['a'] = j + 1
       end
