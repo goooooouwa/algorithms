@@ -31,9 +31,9 @@ def compute_transition_function(p, charset)
   p.length.times do
     transition.push({})
   end
-  (0..p.length-1).each do |i|
+  (0..p.length).each do |i|
     charset.each do |j|
-      transition[i][j] = suffix_function(p[0,i+1]+j,p)
+      transition[i][j] = suffix_function(p[0,i]+j,p)
     end
   end
   transition
