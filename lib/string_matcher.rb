@@ -28,7 +28,7 @@ end
 
 def compute_transition_function(p, charset)
   transition = []
-  p.length.times do
+  (p.length+1).times do
     transition.push({})
   end
   (0..p.length).each do |i|
