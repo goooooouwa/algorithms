@@ -24,7 +24,8 @@ def compute_transition_function(p, charset)
 end
 
 def suffix_function(t, p)
-  (p.length).downto(1) do |k|
+  longest_suffix_length = t.length > p.length ? p.length : t.length
+  longest_suffix_length.downto(1) do |k|
     # return k if p[k] is a suffix of t
     return k if is_suffix?(p[0,k],t)
   end
@@ -32,7 +33,6 @@ def suffix_function(t, p)
 end
 
 def is_suffix?(p,t)
-  return false if p.length > t.length
   (1..p.length).each do |i|
     return false unless p[p.length-i] == t[t.length-i]
   end
