@@ -49,8 +49,8 @@ end
 
 def is_suffix?(p,t)
   shorter_length = p.length < t.length ? p.length : t.length
-  (shorter_length-1).downto(0) do |i|
-    return false unless p[i] == t[i]
+  (1..shorter_length).each do |i|
+    return false unless p[p.length-i] == t[t.length-i]
   end
   true
 end
