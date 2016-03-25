@@ -28,12 +28,12 @@ end
 
 def compute_transition_function(p,charset)
   transition = []
-  (0..p.length-1).each do |i|
+  p.length.times do
     transition.push({})
-    charset.each do |j|
-      if i == p[j]
-        transition[i]['a'] = j + 1
-      end
+  end
+  charset.each do |j|
+    (p.length-1).downto(0) do |k|
+      # transition[k][j] = k if p[k] is a suffix of p[q]+j
     end
   end
   transition
