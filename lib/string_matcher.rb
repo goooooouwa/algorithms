@@ -20,7 +20,7 @@ def finite_automation_matcher(t, p, s)
   transition = compute_transition_function(p, charset)
   (0..t.length-1).each do |i|
     q = transition[q, t[i]]
-    if q == p.length-1
+    if q == p.length
       s.push i
     end
   end
