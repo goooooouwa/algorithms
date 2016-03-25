@@ -42,12 +42,12 @@ end
 def suffix_function(t, p)
   (p.length).downto(1) do |k|
     # return k if p[k] is a suffix of t
-    return k if is_suffix(p[0,k],t)
+    return k if is_suffix?(p[0,k],t)
   end
   0
 end
 
-def is_suffix(p,t)
+def is_suffix?(p,t)
   shorter_length = p.length < t.length ? p.length : t.length
   shorter_length.downto(0) do |i|
     return false unless p[i] == t[i]
