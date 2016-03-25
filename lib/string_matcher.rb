@@ -48,8 +48,8 @@ def suffix_function(t, p)
 end
 
 def is_suffix?(p,t)
-  shorter_length = p.length < t.length ? p.length : t.length
-  (1..shorter_length).each do |i|
+  return false if p.length > t.length
+  (1..p.length).each do |i|
     return false unless p[p.length-i] == t[t.length-i]
   end
   true
