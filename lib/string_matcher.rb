@@ -21,7 +21,7 @@ def finite_automation_matcher(t, p, s)
   (0..t.length-1).each do |i|
     q = transition[q][t[i]]
     if q == p.length
-      s.push i
+      s.push(i+1-p.length)
     end
   end
 end
