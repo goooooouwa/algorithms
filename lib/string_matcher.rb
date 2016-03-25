@@ -14,9 +14,9 @@ def naive_string_matcher(t, p, s)
   end
 end
 
-def automachine_string_matcher(t, p, s)
+def finite_automation_matcher(t, p, s)
   q = 0
-  transition = build_automachine(p)
+  transition = compute_transition_function(p)
   (0..t.length-1).each do |i|
     q = transition[q,t[i]]
     if q == p.length-1
@@ -25,7 +25,7 @@ def automachine_string_matcher(t, p, s)
   end
 end
 
-def build_automachine(p)
+def compute_transition_function(p)
   transition = []
   (0..p.length-1).each do |i|
     transition.push({})
