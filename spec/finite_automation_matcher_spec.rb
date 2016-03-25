@@ -47,7 +47,7 @@ describe '#finite_automation_matcher' do
     }
     let(:pattern) { 'rabbit' }
     let(:shifts) { [] }
-    let(:expected_shifts) { [4, 14] }
+    let(:expected_shifts) { [119, 247, 316, 578, 712, 900, 988, 1053, 1103, 1132, 1204, 1336, 1402, 1503, 1786, 1855, 1952] }
     it 'should find all valid shifts for the pattern in the text' do
       finite_automation_matcher(text,pattern,shifts)
       expect(shifts).to match_array(expected_shifts)
