@@ -1,4 +1,4 @@
-require 'string_matcher'
+require 'naive_string_matcher'
 
 describe 'naive_string_matcher' do
   let(:text) { 'bacbababacabacababacabab' }
