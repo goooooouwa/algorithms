@@ -40,10 +40,11 @@ def compute_transition_function(p, charset)
 end
 
 def suffix_function(t, p)
-  (p.length).downto(0) do |k|
+  (p.length).downto(1) do |k|
     # return k if p[k] is a suffix of t
-    return k if is_suffix(p[0,k+1],t)
+    return k if is_suffix(p[0,k],t)
   end
+  0
 end
 
 def is_suffix(p,t)
