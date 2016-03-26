@@ -1,5 +1,6 @@
-def finite_automation_matcher(t, charset, p, s)
+def finite_automation_matcher(t, p, s)
   q = 0
+  charset = compute_charset(t)
   transition = compute_transition_function(p, charset)
   (0..t.length-1).each do |i|
     q = transition[q][t[i]]
@@ -7,6 +8,10 @@ def finite_automation_matcher(t, charset, p, s)
       s.push(i+1-p.length)
     end
   end
+end
+
+def compute_charset(t)
+  t.split('').uniq
 end
 
 def compute_transition_function(p, charset)
